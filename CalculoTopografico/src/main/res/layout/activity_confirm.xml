@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/AppTheme"
+    android:background="@color/bg_gray">
+
+    <TabHost
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/tabHost"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/toCalc">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <LinearLayout
+                    android:id="@+id/tabImage"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/activity_vertical_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingBottom="@dimen/activity_vertical_margin">
+
+
+                    <ImageButton
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/imageButton"
+                        android:src="@drawable/ic_launcher"
+                        android:background="@color/bg_gray" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/tabList"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:paddingTop="@dimen/activity_vertical_margin">
+
+
+                    <TableLayout
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:shrinkColumns="*"  android:stretchColumns="*"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/PontoCentral"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        >
+
+                        <TableRow
+                            android:layout_height="wrap_content"
+                            android:layout_width="fill_parent"
+                            android:gravity="center_horizontal">
+                            <TextView
+                                style="?android:attr/listSeparatorTextViewStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Ponto Central "
+                                android:id="@+id/pontoCentral"
+                                android:paddingTop="5dip"
+                                android:layout_centerHorizontal="true"
+                                android:layout_span="12"/>
+                        </TableRow>
+
+                        <TableRow android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="X "
+                                android:id="@+id/textXC"
+                                android:paddingTop="5dip"
+                                android:layout_centerHorizontal="true"
+                                android:layout_span="6"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="5dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Y "
+                                android:id="@+id/textYC"
+                                android:paddingTop="5dip"
+                                android:layout_centerHorizontal="true"
+                                android:layout_span="6"
+                                android:layout_marginTop="10dp" />
+                        </TableRow>
+
+                        <TableRow android:layout_marginTop="5dp"
+                            android:layout_height="wrap_content"
+                            android:layout_width="fill_parent"
+                            android:gravity="center_horizontal">
+
+                            <TextView
+                                style="?android:attr/listSeparatorTextViewStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Pontos do Poligono "
+                                android:id="@+id/pontoPoligono"
+                                android:layout_centerHorizontal="true"
+                                android:layout_span="12"
+                                android:paddingTop="5dip" />
+                        </TableRow>
+
+                        <TableRow android:visibility="visible">
+                            <ListView
+                                android:id="@+id/ListPonitsPP"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dip"
+                                android:layout_span="12"
+                                android:numColumns="2"
+                                android:visibility="visible">
+
+                            </ListView>
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        android:id="@+id/toCalc"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin" />
+</RelativeLayout>
